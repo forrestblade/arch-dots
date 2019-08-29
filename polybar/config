@@ -15,7 +15,7 @@ include-file = /home/loki/.config/polybar/modules.conf
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
+monitor = 
 
 modules-left   = jgmenu workspaces
 modules-center = window_switch clock
@@ -29,8 +29,7 @@ modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network vo
 [bar/i3-bar]
 inherit = bar/master
 
-; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
+monitor = ${env:MONITOR:}
 
 modules-left   = i3 menu
 modules-center = clock
@@ -45,11 +44,8 @@ modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network vo
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
-
-modules-left   = bspwm menu
-modules-center = clock
-modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
+monitor = 
+.config/polybar/config                                                      1,24           Top
 
 ;=====================================================
 ;     Openbox Bars
@@ -59,9 +55,8 @@ modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network vo
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
+monitor = 
 
 modules-left   = workspaces menu
 modules-center = clock
 modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
-

@@ -1,0 +1,1490 @@
+
+> puppeteer-jest@0.1.0 test /home/loki/Projects/js/web/puppeteer-jest
+> react-scripts test "--testLocationInResults" "--json" "--useStderr" "--outputFile" "/tmp/jest_runner_puppeteer_jest.json" "--no-color"
+
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/actions/types/index.test.js (6.449s)
+
+PASS src/__tests__/actions/creators/index.test.js (6.454s)
+
+PASS src/__tests__/reducers/index.test.js (6.46s)
+
+PASS src/__tests__/components/index.test.js (8.278s)
+
+FAIL src/__tests__/integration/integration.test.js (54.946s)
+
+  ● Counter › should contain a page title of `React Seed`
+
+    Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.
+
+      at mapper (node_modules/jest-jasmine2/build/queueRunner.js:25:45)
+
+  ● Counter › should contain a page title of `React Seed`
+
+    TypeError: Cannot read property '$eval' of undefined
+
+      17 |   it('should contain a page title of `React Seed`', async () => {
+      18 |     const expectedTitle = 'React Seed'
+    > 19 |     const title = await page.$eval('p', e => e.innerHTML)
+         |                              ^
+      20 | 
+      21 |     expect(title).toEqual(expectedTitle)
+      22 |   })
+
+      at Object.$eval (src/__tests__/integration/integration.test.js:19:30)
+
+  ● Counter › should contain a page title of `React Seed`
+
+    TypeError: Cannot read property 'close' of undefined
+
+      12 | 
+      13 |   afterEach(async () => {
+    > 14 |     browser.close()
+         |             ^
+      15 |   })
+      16 | 
+      17 |   it('should contain a page title of `React Seed`', async () => {
+
+      at Object.close (src/__tests__/integration/integration.test.js:14:13)
+
+  ● Counter › should increment the count when the appropriate button is clicked
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should increment the count when the appropriate button is clicked
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should increment the count when the appropriate button is clicked
+
+    Error: failed to find element matching selector "button.increment"
+
+      23 | 
+      24 |   it('should increment the count when the appropriate button is clicked', async () => {
+    > 25 |     await page.$eval('button.increment', button => button.click())
+         |     ^
+      26 |     const value = await page.$eval('div.value', value =>
+      27 |       parseInt(value.innerHTML)
+      28 |     )
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:25:5)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:25:5)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:25:16)
+
+  ● Counter › should decrement the count when the appropriate button is clicked
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should decrement the count when the appropriate button is clicked
+
+    Error: failed to find element matching selector "button.decrement"
+
+      33 | 
+      34 |   it('should decrement the count when the appropriate button is clicked', async () => {
+    > 35 |     await page.$eval('button.decrement', button => button.click())
+         |     ^
+      36 |     const value = await page.$eval('div.value', value =>
+      37 |       parseInt(value.innerHTML)
+      38 |     )
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:35:5)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:35:5)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:35:16)
+
+  ● John Deere Homepage › selects the first industry and loads the page
+
+    : Timeout - Async callback was not invoked within the 30000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 30000ms timeout specified by jest.setTimeout.Error:
+
+      63 |   })
+      64 | 
+    > 65 |   it('selects the first industry and loads the page', async () => {
+         |   ^
+      66 |     await page.waitForSelector('.industry-col');
+      67 |     await page.click('.industry-col')
+      68 |     await page.waitForNavigation()
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.it (src/__tests__/integration/integration.test.js:65:3)
+      at Object.describe (src/__tests__/integration/integration.test.js:45:1)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       4 failed, 12 passed, 16 total
+Snapshots:   0 total
+Time:        61.547s
+Ran all test suites.
+
+npm
+ ERR! Test failed.  See above for more details.
+
+Finished running all tests. Starting watch mode.
+
+> puppeteer-jest@0.1.0 test /home/loki/Projects/js/web/puppeteer-jest
+> react-scripts test "--testLocationInResults" "--json" "--useStderr" "--outputFile" "/tmp/jest_runner_puppeteer_jest.json" "--watch" "--no-color"
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (35.622s)
+
+  ● Counter › should contain a page title of `React Seed`
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should contain a page title of `React Seed`
+
+    Error: failed to find element matching selector "p"
+
+      17 |   it('should contain a page title of `React Seed`', async () => {
+      18 |     const expectedTitle = 'React Seed'
+    > 19 |     const title = await page.$eval('p', e => e.innerHTML)
+         |                   ^
+      20 | 
+      21 |     expect(title).toEqual(expectedTitle)
+      22 |   })
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:19:19)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:19:19)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:19:30)
+
+  ● Counter › should increment the count when the appropriate button is clicked
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should increment the count when the appropriate button is clicked
+
+    Error: failed to find element matching selector "button.increment"
+
+      23 | 
+      24 |   it('should increment the count when the appropriate button is clicked', async () => {
+    > 25 |     await page.$eval('button.increment', button => button.click())
+         |     ^
+      26 |     const value = await page.$eval('div.value', value =>
+      27 |       parseInt(value.innerHTML)
+      28 |     )
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:25:5)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:25:5)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:25:16)
+
+  ● Counter › should decrement the count when the appropriate button is clicked
+
+    net::ERR_CONNECTION_REFUSED at http://localhost:3000
+
+       8 |     browser = await puppeteer.launch()
+       9 |     page = await browser.newPage()
+    > 10 |     await page.goto('http://localhost:3000')
+         |                ^
+      11 |   })
+      12 | 
+      13 |   afterEach(async () => {
+
+      at navigate (node_modules/puppeteer/lib/FrameManager.js:121:37)
+        -- ASYNC --
+      at Object.goto (src/__tests__/integration/integration.test.js:10:16)
+
+  ● Counter › should decrement the count when the appropriate button is clicked
+
+    Error: failed to find element matching selector "button.decrement"
+
+      33 | 
+      34 |   it('should decrement the count when the appropriate button is clicked', async () => {
+    > 35 |     await page.$eval('button.decrement', button => button.click())
+         |     ^
+      36 |     const value = await page.$eval('div.value', value =>
+      37 |       parseInt(value.innerHTML)
+      38 |     )
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:35:5)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:35:5)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:35:16)
+
+  ● John Deere Homepage › selects the first industry and loads the page
+
+    : Timeout - Async callback was not invoked within the 30000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 30000ms timeout specified by jest.setTimeout.Error:
+
+      63 |   })
+      64 | 
+    > 65 |   it('selects the first industry and loads the page', async () => {
+         |   ^
+      66 |     await page.waitForSelector('.industry-col');
+      67 |     await page.click('.industry-col')
+      68 |     await page.waitForNavigation()
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.it (src/__tests__/integration/integration.test.js:65:3)
+      at Object.describe (src/__tests__/integration/integration.test.js:45:1)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       4 failed, 12 passed, 16 total
+Snapshots:   0 total
+Time:        36.295s, estimated 55s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        2.439s, estimated 36s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        2.299s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        2.432s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        2.569s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (8.937s)
+  ● Counter › should sign into the test account
+
+    : Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error:
+
+      16 | 
+      17 |  
+    > 18 |  it('should sign into the test account', async () => {
+         |  ^
+      19 |    const expectedEndpoint = 'https://salescentercert2.deere.com/#/dashboard/home/all-activities'  
+      20 |   
+      21 |    await page.click('#okta-signin-username');
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.it (src/__tests__/integration/integration.test.js:18:2)
+      at Object.describe (src/__tests__/integration/integration.test.js:4:1)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 11 passed, 12 total
+Snapshots:   0 total
+Time:        10.861s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js
+  ● Counter › should sign into the test account
+
+    No node found for selector: #okta-signin-username
+
+      19 |    const expectedEndpoint = 'https://salescentercert2.deere.com/#/dashboard/home/all-activities'  
+      20 |   
+    > 21 |    await page.click('#okta-signin-username');
+         |    ^
+      22 |    await page.keyboard.type('x610504');
+      23 |    await page.click('#okta-signin-password');
+      24 |    await page.keyboard.type('Opensesame40');
+
+      at assert (node_modules/puppeteer/lib/helper.js:270:11)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:21:4)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:21:15)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 11 passed, 12 total
+Snapshots:   0 total
+Time:        4.402s, estimated 9s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (8.731s)
+  ● Counter › should sign into the test account
+
+    : Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error:
+
+      16 | 
+      17 |  
+    > 18 |  it('should sign into the test account', async () => {
+         |  ^
+      19 |    const expectedEndpoint = 'https://salescentercert2.deere.com/#/dashboard/home/all-activities'  
+      20 |   
+      21 |    await page.click('#okta-signin-username');
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.it (src/__tests__/integration/integration.test.js:18:2)
+      at Object.describe (src/__tests__/integration/integration.test.js:4:1)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 11 passed, 12 total
+Snapshots:   0 total
+Time:        9.56s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/integration/integration.test.js (18.489s)
+
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        19.268s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (8.755s)
+  ● Counter › should sign into the test account
+
+    Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.Error: Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.
+
+      at mapper (node_modules/jest-jasmine2/build/queueRunner.js:25:45)
+
+  ● Counter › should sign into the test account
+
+    Execution context was destroyed, most likely because of a navigation.
+
+      20 |    const expectedEndpoint = 'https://salescentercert2.deere.com/#/dashboard/home/all-activities'  
+      21 |   
+    > 22 |    await page.click('#okta-signin-username');
+         |    ^
+      23 |    await page.keyboard.type('x610504');
+      24 |    await page.click('#okta-signin-password');
+      25 |    await page.keyboard.type('Opensesame40');
+
+      at rewriteError (node_modules/puppeteer/lib/ExecutionContext.js:167:15)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:22:4)
+        -- ASYNC --
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:22:15)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 11 passed, 12 total
+Snapshots:   0 total
+Time:        9.58s, estimated 19s
+Ran all test suites related to changed files.
+
+
+
+(node:26561) UnhandledPromiseRejectionWarning: Error: Caught error after test environment was torn down
+
+Navigation failed because browser has disconnected!
+(node:26561) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:26561) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/integration/integration.test.js (18.913s)
+
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        19.765s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js
+
+  ● Test suite failed to run
+
+    SyntaxError: /home/loki/Projects/js/web/puppeteer-jest/src/__tests__/integration/integration.test.js: Unexpected token, expected ";" (36:34)
+
+      34 |   
+      35 |   it('should add a machine to the quote', async () => {
+    > 36 |     const tabs = await page.await page.$$('a.icon-home');
+         |                                   ^
+      37 |     
+      38 |   })
+      39 |
+
+      at Object.raise (node_modules/@babel/parser/lib/index.js:6325:17)
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        2.266s, estimated 19s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js (10.677s)
+
+  ● Counter › should sign into the test account
+
+    No node found for selector: .buttons-module-agreeButton-EGKQY
+
+      26 |    await page.click('#okta-signin-submit');
+      27 |    await page.waitFor(7000);
+    > 28 |    await page.click('.buttons-module-agreeButton-EGKQY');
+         |    ^
+      29 |    await page.waitFor(7000);
+      30 | 
+      31 |    expect(page.url()).toBe(expectedEndpoint)
+
+      at assert (node_modules/puppeteer/lib/helper.js:270:11)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:28:4)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:28:15)
+
+  ● Counter › should add a machine to the quote
+
+    TypeError: Cannot read property 'click' of undefined
+
+      36 |     const tabs = await page.$$('a.icon-home');
+      37 | 
+    > 38 |     await tabs[1].click()
+         |                   ^
+      39 |     await await page.waitFor(5000);
+      40 |   })
+      41 |   
+
+      at Object.click (src/__tests__/integration/integration.test.js:38:19)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       2 failed, 11 passed, 13 total
+Snapshots:   0 total
+Time:        12.601s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (12.101s)
+
+  ● Counter › should sign into the test account
+
+    No node found for selector: .buttons-module-agreeButton-EGKQY
+
+      27 |    await page.click('#okta-signin-submit');
+      28 |    await page.waitFor(7000);
+    > 29 |    await page.click('.buttons-module-agreeButton-EGKQY');
+         |    ^
+      30 |    await page.waitFor(7000);
+      31 | 
+      32 |    expect(page.url()).toBe(expectedEndpoint)
+
+      at assert (node_modules/puppeteer/lib/helper.js:270:11)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:29:4)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:29:15)
+
+  ● Counter › should add a machine to the quote
+
+    TypeError: Cannot read property 'click' of undefined
+
+      37 |     const tabs = await page.$$('a.icon-home');
+      38 | 
+    > 39 |     await tabs[1].click()
+         |                   ^
+      40 |     await await page.waitFor(5000);
+      41 |   })
+      42 |   
+
+      at Object.click (src/__tests__/integration/integration.test.js:39:19)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       2 failed, 11 passed, 13 total
+Snapshots:   0 total
+Time:        12.886s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/integration/integration.test.js (24.289s)
+
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       13 passed, 13 total
+Snapshots:   0 total
+Time:        25.108s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (49.905s)
+  ● Counter › should add a machine to the quote
+
+    Protocol error (Runtime.callFunctionOn): Target closed.
+
+      43 |     await sendToButtons[1].click()
+      44 |     await page.click('.actions-menu-item');
+    > 45 |     await page.waitForSelector('.modal-body');
+         |                ^
+      46 |     await page.click('.action-button');
+      47 |     await page.waitFor(5000);
+      48 |     
+
+      at node_modules/puppeteer/lib/Connection.js:183:56
+        -- ASYNC --
+      at Object.waitForSelector (src/__tests__/integration/integration.test.js:45:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        50.822s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js (33.484s)
+
+  ● Counter › should add a machine to the quote
+
+    Protocol error (Runtime.callFunctionOn): Target closed.
+
+      44 |     await page.waitFor(5000);
+      45 |     await page.click('.actions-menu-item');
+    > 46 |     await page.waitForSelector('.modal-body');
+         |                ^
+      47 |     await page.click('.action-button');
+      48 |     await page.waitFor(5000);
+      49 |     
+
+      at node_modules/puppeteer/lib/Connection.js:183:56
+        -- ASYNC --
+      at Object.waitForSelector (src/__tests__/integration/integration.test.js:46:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        34.44s, estimated 50s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (25.946s)
+
+  ● Counter › should add a machine to the quote
+
+    No node found for selector: .base-button-module-baseButton-mefeh primary-button-module-primaryButton-IGJoi
+
+      42 |     // const sendToButtons = await page.$$('button.actions-button');
+      43 |     // await sendToButtons[1].click()
+    > 44 |     await page.click('.base-button-module-baseButton-mefeh primary-button-module-primaryButton-IGJoi');
+         |     ^
+      45 |     await page.waitFor(5000);
+      46 |     await page.click('.actions-menu-item');
+      47 |     await page.waitForSelector('.modal-body');
+
+      at assert (node_modules/puppeteer/lib/helper.js:270:11)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:44:5)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:44:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        26.786s, estimated 34s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (55.913s)
+
+  ● Counter › should add a machine to the quote
+
+    TimeoutError: waiting for selector ".base-button-module-baseButton-mefeh primary-button-module-primaryButton-IGJoi" failed: timeout 30000ms exceeded
+
+      42 |     // const sendToButtons = await page.$$('button.actions-button');
+      43 |     // await sendToButtons[1].click()
+    > 44 |     await page.waitForSelector('.base-button-module-baseButton-mefeh primary-button-module-primaryButton-IGJoi');
+         |                ^
+      45 |     await page.click('.base-button-module-baseButton-mefeh primary-button-module-primaryButton-IGJoi');
+      46 |     await page.waitFor(5000);
+      47 |     await page.click('.actions-menu-item');
+
+      at new WaitTask (node_modules/puppeteer/lib/DOMWorld.js:561:28)
+      at Object.waitForSelector (src/__tests__/integration/integration.test.js:44:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        56.841s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js (11.268s)
+  ● Counter › should sign into the test account
+
+    Protocol error (Runtime.evaluate): Session closed. Most likely the page has been closed.
+
+      27 |    await page.click('#okta-signin-submit');
+      28 |    await page.waitFor(7000);
+    > 29 |    await page.click('.buttons-module-agreeButton-EGKQY');
+         |               ^
+      30 |    await page.waitFor(7000);
+      31 | 
+      32 |    expect(page.url()).toBe(expectedEndpoint)
+
+      at CDPSession.send (node_modules/puppeteer/lib/Connection.js:180:29)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:29:15)
+
+  ● Counter › should add a machine to the quote
+
+    Protocol error (Runtime.evaluate): Session closed. Most likely the page has been closed.
+
+      35 |   
+      36 |   it('should add a machine to the quote', async () => {
+    > 37 |     const tabs = await page.$$('a.icon-home');
+         |                             ^
+      38 | 
+      39 |     await tabs[2].click()
+      40 |     await await page.waitFor(7000);
+
+      at CDPSession.send (node_modules/puppeteer/lib/Connection.js:180:29)
+        -- ASYNC --
+      at Object.$$ (src/__tests__/integration/integration.test.js:37:29)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       2 failed, 11 passed, 13 total
+Snapshots:   0 total
+Time:        12.139s, estimated 56s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+FAIL src/__tests__/integration/integration.test.js (36.633s)
+
+  ● Counter › should add a machine to the quote
+
+    TypeError: page.eval is not a function
+
+      50 |     await page.waitFor(5000);
+      51 |     
+    > 52 |     const untitledQuote = await await page.eval('input.editable-input', input => input.value);
+         |                                            ^
+      53 | 
+      54 |     expect(untitledQuote).toEqual('Untitled Quote')
+      55 |   })
+
+      at Object.eval (src/__tests__/integration/integration.test.js:52:44)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        37.469s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/integration.test.js (36.899s)
+
+  ● Counter › should add a machine to the quote
+
+    Error: failed to find element matching selector "input.editable-input"
+
+      50 |     await page.waitFor(5000);
+      51 |     
+    > 52 |     const untitledQuote = await await page.$eval('input.editable-input', input => input.value);
+         |                                 ^
+      53 | 
+      54 |     expect(untitledQuote).toEqual('Untitled Quote')
+      55 |   })
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:52:33)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:52:33)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:52:44)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        37.793s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+FAIL src/__tests__/integration/integration.test.js (19.758s)
+
+  ● Counter › should add a machine to the quote
+
+    Node is either not visible or not an HTMLElement
+
+      38 |     const tabs = await page.$$('a.icon-home');
+      39 | 
+    > 40 |     await tabs[2].click()
+         |     ^
+      41 |     await await page.waitFor(7000);
+      42 | 
+      43 |     // const sendToButtons = await page.$$('button.actions-button');
+
+      at ElementHandle._clickablePoint (node_modules/puppeteer/lib/JSHandle.js:204:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:40:5)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:40:19)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        20.526s, estimated 37s
+Ran all test suites related to changed files.
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+FAIL src/__tests__/integration/integration.test.js (54.196s)
+
+  ● Counter › should add a machine to the quote
+
+    Protocol error (Runtime.callFunctionOn): Target closed.
+
+      52 |     
+      53 |     
+    > 54 |     await page.waitForSelector('input.editable-input');
+         |                ^
+      55 |     const untitledQuote = await await page.$eval('input.editable-input', input => input.value);
+      56 | 
+      57 |     expect(untitledQuote).toEqual('Untitled Quote')
+
+      at node_modules/puppeteer/lib/Connection.js:183:56
+        -- ASYNC --
+      at Object.waitForSelector (src/__tests__/integration/integration.test.js:54:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        55.048s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+FAIL src/__tests__/integration/integration.test.js (32.612s)
+
+  ● Counter › should add a machine to the quote
+
+    No node found for selector: .base-button-module-baseButton-5zjvK
+
+      48 |     await page.click('.actions-menu-item');
+      49 |     await page.waitForSelector('.modal-body');
+    > 50 |     await page.click('.base-button-module-baseButton-5zjvK');
+         |     ^
+      51 |     await page.waitFor(5000);
+      52 |     
+      53 |     
+
+      at assert (node_modules/puppeteer/lib/helper.js:270:11)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:50:5)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:50:16)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       1 failed, 12 passed, 13 total
+Snapshots:   0 total
+Time:        33.44s, estimated 55s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/integration/integration.test.js (38.758s)
+
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       13 passed, 13 total
+Snapshots:   0 total
+Time:        39.597s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+FAIL src/__tests__/integration/integration.test.js (12.886s)
+  ● Counter › should sign into the test account
+
+    Execution context was destroyed, most likely because of a navigation.
+
+      28 |    await page.click('#okta-signin-submit');
+      29 |    await page.waitFor(7000);
+    > 30 |    await page.click('.buttons-module-agreeButton-EGKQY');
+         |    ^
+      31 |    await page.waitFor(7000);
+      32 | 
+      33 |    expect(page.url()).toBe(expectedEndpoint)
+
+      at rewriteError (node_modules/puppeteer/lib/ExecutionContext.js:167:15)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:30:4)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:30:4)
+        -- ASYNC --
+      at Object.click (src/__tests__/integration/integration.test.js:30:15)
+
+  ● Counter › should add a machine to the quote
+
+    Error: failed to find element matching selector "input.editable-input"
+
+      37 |   it('should add a machine to the quote', async () => {
+      38 |     const tabs = await page.$$('a.icon-home');
+    > 39 |     const untitledQuote = await page.$eval('input.editable-input', input => input.value);
+         |                           ^
+      40 | 
+      41 |     await tabs[2].click()
+      42 |     await await page.waitFor(7000);
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:39:27)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:39:27)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:39:38)
+
+
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       2 failed, 11 passed, 13 total
+Snapshots:   0 total
+Time:        13.702s, estimated 39s
+Ran all test suites related to changed files.
+
+
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+FAIL src/__tests__/integration/integration.test.js (19.205s)
+
+  ● Counter › should add a machine to the quote
+
+    Error: failed to find element matching selector "input.editable-input"
+
+      37 |   it('should add a machine to the quote', async () => {
+      38 |     const tabs = await page.$$('a.icon-home');
+    > 39 |     const untitledQuote = await page.$eval('input.editable-input', input => input.value);
+         |                           ^
+      40 | 
+      41 |     await tabs[2].click()
+      42 |     await await page.waitFor(7000);
+
+      at ElementHandle.$eval (node_modules/puppeteer/lib/JSHandle.js:435:13)
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:39:27)
+        -- ASYNC --
+      at Object.<anonymous> (src/__tests__/integration/integration.test.js:39:27)
+        -- ASYNC --
+      at Object.$eval (src/__tests__/integration/integration.test.js:39:38)
+
+
+PASS src/__tests__/reducers/index.test.js
+
+PASS src/__tests__/actions/types/index.test.js
+
+PASS src/__tests__/components/index.test.js
+
+PASS src/__tests__/actions/creators/index.test.js
+
+FAIL src/__tests__/integration/jest.config.js
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at node_modules/@jest/core/build/TestScheduler.js:242:24
+          at runMicrotasks (<anonymous>)
+
+
+PASS src/__tests__/integration/integration.test.js (32.592s)
+
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       13 passed, 13 total
+Snapshots:   0 total
+Time:        33.383s
+Ran all test suites related to changed files.
+

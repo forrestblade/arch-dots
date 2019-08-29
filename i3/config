@@ -40,17 +40,17 @@ set $down k
 set $left j
 set $right semicolon
 
-set $WS1 "1: "
+set $WS1 "1: "
 set $WS2 "2: "
-set $WS3 "3: "
-set $WS4 "4: "
-set $WS5 "5: "
-set $WS6 "6: "
-set $WS7 "7: "
-set $WS8 "8: "
+set $WS3 "3: "
+set $WS4 "4: "
+set $WS5 "5: "
+set $WS6 "6: "
+set $WS7 "7: "
+set $WS8 "8: "
 
 # monitors
-set $Mon1 HDMI1
+set $Mon1 DP-5
 set $Mon2 HDMI2
 
 #####################################################
@@ -58,7 +58,7 @@ set $Mon2 HDMI2
 #####################################################
 
 # run with reload
-exec_always --no-startup-id al-polybar-session
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id xrdb -load ~/.Xresources
 
@@ -113,6 +113,15 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 ################################################################
 ###########          Workspace Bindings          ###############
 ################################################################
+
+for_window [class="gotop"] move to workspace $WS1
+for_window [class="chromium"] move to workspace $WS2
+for_window [class="code-oss"] move to workspace $WS3
+for_window [class="Spotify"] move to workspace $WS4
+for_window [class="kitty"] move to workspace $WS5
+for_window [class="nautilus"] move to workspace $WS6
+for_window [class="deluge-gtk"] move to workspace $WS7
+for_window [class="Discord"] move to workspace $WS8
 
 # workspace assignment
 workspace $WS1 output $Mon1

@@ -1,0 +1,14 @@
+[2019-08-28 18:18:38.013] [sharedprocess] [info] main {"machineId":"6684f2424201b406816388b7d90407d6068be75fc332bb793a92256c312ce0c2"}
+[2019-08-28 18:19:18.016] [sharedprocess] [info] Starting to clean up unused language packs.
+[2019-08-28 20:53:25.897] [sharedprocess] [info] Installing extension: isayme.vscode-prettier-standard
+[2019-08-28 20:53:26.891] [sharedprocess] [info] Downloaded extension: isayme.vscode-prettier-standard /tmp/f4d3ca7e-c14f-40f1-b078-97b8c9762390
+[2019-08-28 20:53:30.726] [sharedprocess] [info] Extracted extension to /home/loki/.vscode-oss/extensions/.isayme.vscode-prettier-standard-0.0.2: isayme.vscode-prettier-standard
+[2019-08-28 20:53:30.726] [sharedprocess] [info] Renamed to /home/loki/.vscode-oss/extensions/isayme.vscode-prettier-standard-0.0.2
+[2019-08-28 20:53:30.727] [sharedprocess] [info] Installation completed. isayme.vscode-prettier-standard
+[2019-08-28 20:53:30.764] [sharedprocess] [info] Extensions installed successfully: isayme.vscode-prettier-standard
+[2019-08-28 21:13:50.258] [sharedprocess] [info] Installing extension: andys8.jest-snippets
+[2019-08-28 21:13:50.436] [sharedprocess] [info] Downloaded extension: andys8.jest-snippets /tmp/bc8e9df0-859a-4e74-b6b5-b8a8e431cd9f
+[2019-08-28 21:13:50.444] [sharedprocess] [info] Extracted extension to /home/loki/.vscode-oss/extensions/.andys8.jest-snippets-1.7.0: andys8.jest-snippets
+[2019-08-28 21:13:50.444] [sharedprocess] [info] Renamed to /home/loki/.vscode-oss/extensions/andys8.jest-snippets-1.7.0
+[2019-08-28 21:13:50.445] [sharedprocess] [info] Installation completed. andys8.jest-snippets
+[2019-08-28 21:13:50.492] [sharedprocess] [info] Extensions installed successfully: andys8.jest-snippets
